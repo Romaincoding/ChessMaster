@@ -10,8 +10,13 @@ import java.util.List;
 public class ChessModel implements IChess{
 
     private static ChessModel instance;
+    public static Piece [][] chessBoard ; // Board's creation
 
     private  ChessModel(){
+      // chessBoard [][] = new Piece[8][8];
+
+
+
 
     }
 
@@ -28,11 +33,12 @@ public class ChessModel implements IChess{
     @Override
     public void reinit() {
 
+
     }
 
     @Override
     public ChessType getPieceType(ChessPosition p) throws EmptyCellException, OutOfBoardException {
-        return ChessType.TYP_PAWN;
+       return ChessType.TYP_KING;
     }
 
     @Override

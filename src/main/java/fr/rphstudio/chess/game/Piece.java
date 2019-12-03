@@ -10,9 +10,10 @@ public class Piece implements IChess {
 
     private static ChessColor color;
     private static ChessType type;
+    public static ChessModel board;
 
+    public Piece (ChessColor color,ChessType type){
 
-    public Piece (){
 
     }
 
