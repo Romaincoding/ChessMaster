@@ -24,6 +24,7 @@ public class Piece {
 
 
     public ChessType getType() {
+
         return type;
     }
 
