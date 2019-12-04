@@ -6,11 +6,21 @@ import fr.rphstudio.chess.interf.IMove;
 import java.util.ArrayList;
 import java.util.List;
 
-/*public class King implements IMove {
+public class King implements IMove {
 
     public List<IChess.ChessPosition> getPossibleMoves(IChess.ChessPosition pos, Board board) {
         System.out.println("test 1");
         List<IChess.ChessPosition> kingMoves = new ArrayList<>();
-        IChess.ChessPosition posSrc = new IChess.ChessPosition(pos.x, pos.y);
+
+        ChessUtility.addXYMove(pos,board,kingMoves,1,0,1);
+        ChessUtility.addXYMove(pos,board,kingMoves,0,-1,1);
+        ChessUtility.addXYMove(pos,board,kingMoves,-1,-1,1);
+        ChessUtility.addXYMove(pos,board,kingMoves,1,1,1);
+        ChessUtility.addXYMove(pos,board,kingMoves,0,1,1);
+        ChessUtility.addXYMove(pos,board,kingMoves,-1,0,1);
+        ChessUtility.addXYMove(pos,board,kingMoves,1,-1,1);
+        ChessUtility.addXYMove(pos,board,kingMoves,-1,1,1);
+
+        return kingMoves;
     }
-} */
+}

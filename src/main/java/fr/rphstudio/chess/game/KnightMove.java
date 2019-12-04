@@ -7,21 +7,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class KnightMove implements IMove {
-
-
-    @Override
     public List<IChess.ChessPosition> getPossibleMoves(IChess.ChessPosition pos, Board board) {
-        System.out.println("Je suis ici");
-
+        System.out.println("test 1");
         List<IChess.ChessPosition> knightMoves = new ArrayList<>();
-
-
-        IChess.ChessPosition pos1 = new IChess.ChessPosition(2, 5);
-        knightMoves.add(pos1);
-
-
+        ChessUtility.addXYMove(pos,board,knightMoves,2,1,1);
+        ChessUtility.addXYMove(pos,board,knightMoves,2,-1,1);
+        ChessUtility.addXYMove(pos,board,knightMoves,-2,1,1);
+        ChessUtility.addXYMove(pos,board,knightMoves,-2,-1,1);
+        ChessUtility.addXYMove(pos,board,knightMoves,1,2,1);
+        ChessUtility.addXYMove(pos,board,knightMoves,-1,2,1);
+        ChessUtility.addXYMove(pos,board,knightMoves,1,-2,1);
+        ChessUtility.addXYMove(pos,board,knightMoves,-1,-2,1);
 
 
         return knightMoves;
+
     }
 }
