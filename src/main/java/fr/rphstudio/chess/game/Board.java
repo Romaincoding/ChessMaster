@@ -4,6 +4,8 @@ import fr.rphstudio.chess.interf.IChess;
 import fr.rphstudio.chess.interf.IChess.*;
 import org.newdawn.slick.tests.SoundURLTest;
 
+import java.util.List;
+
 public class Board {
     private Piece[][] gameBoard;
 
@@ -82,7 +84,12 @@ public class Board {
     }
 
     public Piece getPiece(ChessPosition position) {
-        return gameBoard[position.y][position.x];
+        if (position.x >= 0 && position.x <=7 && position.y >= 0 && position.y <=7) {
+            return gameBoard[position.y][position.x];
+        }
+        else {
+            return null;
+        }
     }
 
     public int getNbPieces(ChessColor color) {
@@ -107,6 +114,41 @@ public class Board {
         this.gameBoard [src.y][src.x] = null;
      }
 
+    public boolean isKingSafe(ChessColor color){
+        ChessPosition kingPos = new ChessPosition();
+        for (int row = 0; row < 8; row++) {
+            for (int col = 0; col < 8; col++) {
+                Piece piece = gameBoard[row][col];
+                if (piece != null){
+                    if (piece.getType() == ChessType.TYP_KING && piece.getColor() == color) {
+                        kingPos.x = col;
+                        kingPos.y = row;
+                    }
+                }
 
+            }
+        }
+        for ( int row = 0; row < 8; row++) {
+            for (int col = 0; col < 8; col++){
+                Piece piece = gameBoard[row][col];
+                if (piece != null){
+                    if(piece.getColor()!= color){
+                        ChessPosition enemyPos =  new IChess.ChessPosition(col,row);
+                        List<ChessPosition> enemyList = piece.getMoves(enemyPos,this);
+                        for (int i=0; i < enemyList.size(); i++){
+                            ChessPosition currentPos = enemyList.get(i);
+                            if (kingPos.equals(currentPos)){
+                                return false;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+        return true;
+
+
+    }
 
 }

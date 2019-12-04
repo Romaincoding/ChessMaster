@@ -13,7 +13,7 @@ public class ChessModel implements IChess{
     private Board chessBoard;
 
     private  ChessModel(){
-      chessBoard = new Board();
+      reinit();
 
 
 
@@ -32,6 +32,7 @@ public class ChessModel implements IChess{
 
     @Override
     public void reinit() {
+        chessBoard = new Board();
 
 
     }
@@ -86,7 +87,10 @@ public class ChessModel implements IChess{
 
     @Override
     public ChessKingState getKingState(ChessColor color) {
-        return ChessKingState.KING_SAFE;
+        if (chessBoard.isKingSafe(color)){
+            return ChessKingState.KING_SAFE;
+        }
+        else{return ChessKingState.KING_THREATEN;}
     }
 
     @Override
