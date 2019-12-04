@@ -11,11 +11,16 @@ public class KnightMove implements IMove {
 
     @Override
     public List<IChess.ChessPosition> getPossibleMoves(IChess.ChessPosition pos, Board board) {
+        System.out.println("Je suis ici");
 
         List<IChess.ChessPosition> knightMoves = new ArrayList<>();
 
+
         IChess.ChessPosition pos1 = new IChess.ChessPosition(2, 5);
         knightMoves.add(pos1);
+
+
+
 
         return knightMoves;
     }
