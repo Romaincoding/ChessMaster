@@ -27,7 +27,7 @@ public class Board {
         gameBoard[0][6] = p7;
         Piece p8 = new Piece(ChessColor.CLR_BLACK, ChessType.TYP_ROOK, new Rook());
         gameBoard[0][7] = p8;
-       /* Piece p9 = new Piece(ChessColor.CLR_BLACK, ChessType.TYP_PAWN, new Pawn());
+        Piece p9 = new Piece(ChessColor.CLR_BLACK, ChessType.TYP_PAWN, new Pawn());
         gameBoard[1][0] = p9;
         Piece p10 = new Piece(ChessColor.CLR_BLACK, ChessType.TYP_PAWN, new Pawn());
         gameBoard[1][1] = p10;
@@ -44,10 +44,10 @@ public class Board {
         Piece p16 = new Piece(ChessColor.CLR_BLACK, ChessType.TYP_PAWN, new Pawn());
         gameBoard[1][7] = p16;
 
-        */
 
 
-     /*   Piece p17 = new Piece(ChessColor.CLR_WHITE, ChessType.TYP_PAWN, new Pawn());
+
+        Piece p17 = new Piece(ChessColor.CLR_WHITE, ChessType.TYP_PAWN, new Pawn());
         gameBoard[6][0] = p17;
         Piece p18 = new Piece(ChessColor.CLR_WHITE, ChessType.TYP_PAWN, new Pawn());
         gameBoard[6][1] = p18;
@@ -62,7 +62,7 @@ public class Board {
         Piece p23 = new Piece(ChessColor.CLR_WHITE, ChessType.TYP_PAWN, new Pawn());
         gameBoard[6][6] = p23;
         Piece p24 = new Piece(ChessColor.CLR_WHITE, ChessType.TYP_PAWN, new Pawn());
-        gameBoard[6][7] = p24;*/
+        gameBoard[6][7] = p24;
         Piece p25 = new Piece(ChessColor.CLR_WHITE, ChessType.TYP_ROOK, new Rook());
         gameBoard[7][0] = p25;
         Piece p26 = new Piece(ChessColor.CLR_WHITE, ChessType.TYP_KNIGHT, new KnightMove());

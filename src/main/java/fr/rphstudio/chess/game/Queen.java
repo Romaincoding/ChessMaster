@@ -8,7 +8,6 @@ import java.util.List;
 
 public class Queen implements IMove {
     public List<IChess.ChessPosition> getPossibleMoves(IChess.ChessPosition pos, Board board) {
-        System.out.println("test 1");
         List<IChess.ChessPosition> queenMoves = new ArrayList<>();
         ChessUtility.addXYMove(pos,board,queenMoves,1,0);
         ChessUtility.addXYMove(pos,board,queenMoves,0,-1);

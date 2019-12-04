@@ -9,7 +9,6 @@ import java.util.List;
 public class King implements IMove {
 
     public List<IChess.ChessPosition> getPossibleMoves(IChess.ChessPosition pos, Board board) {
-        System.out.println("test 1");
         List<IChess.ChessPosition> kingMoves = new ArrayList<>();
 
         ChessUtility.addXYMove(pos,board,kingMoves,1,0,1);

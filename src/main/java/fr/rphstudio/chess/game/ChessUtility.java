@@ -6,9 +6,26 @@ import java.util.List;
 
 public class ChessUtility {
 
+
+    public static void addXYMove(IChess.ChessPosition pos, Board board, List<IChess.ChessPosition> rookMoves, int varX, int varY, IChess.ChessColor color){
+        ChessUtility.addXYMove(pos,board,rookMoves,varX,varY,color);
+
+        /*
+        if (color == IChess.ChessColor.CLR_WHITE){
+            varY = varY - 1;
+        }
+        else{
+
+            varY = varY + 1;
+        }
+
+         */
+    }
+
     public static void addXYMove(IChess.ChessPosition pos, Board board, List<IChess.ChessPosition> rookMoves,int varX, int varY){
         ChessUtility.addXYMove(pos,board,rookMoves,varX,varY,7);
     }
+
 
 
     public static void addXYMove(IChess.ChessPosition pos, Board board, List<IChess.ChessPosition> rookMoves,int varX, int varY,int dist){
