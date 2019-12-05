@@ -10,7 +10,7 @@ public class Board {
     private Piece[][] gameBoard;
     public static ArrayList<ChessType> blackPiece = new ArrayList<>();
     public static ArrayList<ChessType> whitePiece = new ArrayList<>();
-
+    public static ArrayList<Move> historyMoves = new ArrayList<>();
     /**
      *
      */
@@ -126,24 +126,38 @@ public class Board {
      * @param dest
      */
     public void movePiece(ChessPosition src, ChessPosition dest) {
-        Piece piece = getPiece(dest);
-        if (piece != null && piece.getColor() == ChessColor.CLR_BLACK) {
-            ChessType pieceType = piece.getType();
+
+        Piece pieceDest = getPiece(dest);
+        Piece pieceSrc = getPiece(src);
+        Move move;
+
+        if (pieceDest == null) {
+            move = new Move(pieceSrc.getColor(), null, pieceSrc.getType(), null, src, null);
+        }
+        else {
+            move = new Move(pieceSrc.getColor(), pieceDest.getColor(), pieceSrc.getType(), pieceDest.getType(), src, dest);
+        }
+        historyMoves.add(move);
+        // Pieces prises et renvoyées selon leur couleur
+        if ((pieceDest != null) && (pieceDest.getColor() == ChessColor.CLR_BLACK)) {
+            ChessType pieceType = pieceDest.getType();
             blackPiece.add(pieceType);
-        } else if (piece != null && piece.getColor() == ChessColor.CLR_WHITE) {
-            ChessType pieceType =piece.getType();
+        } else if ((pieceDest != null) && (pieceDest.getColor() == ChessColor.CLR_WHITE)) {
+            ChessType pieceType =pieceDest.getType();
             whitePiece.add(pieceType);
         }
+
+        //Pion dernière ligne se change en dame
         this.gameBoard[dest.y][dest.x] = this.gameBoard[src.y][src.x];
         this.gameBoard[src.y][src.x] = null;
         for (int row = 0; row < 8; row++) {
-            piece = getPiece(new ChessPosition(row, 0));
-            if (piece != null && piece.getType() == ChessType.TYP_PAWN) {
+            pieceDest = getPiece(new ChessPosition(row, 0));
+            if (pieceDest != null && pieceDest.getType() == ChessType.TYP_PAWN) {
                 Piece dame = new Piece(ChessColor.CLR_WHITE, ChessType.TYP_QUEEN, new Queen());
                 gameBoard[0][row] = dame;
             }
-            piece = getPiece(new ChessPosition(row, 7));
-            if (piece != null && piece.getType() == ChessType.TYP_PAWN) {
+            pieceDest = getPiece(new ChessPosition(row, 7));
+            if (pieceDest != null && pieceDest.getType() == ChessType.TYP_PAWN) {
                 Piece dame = new Piece(ChessColor.CLR_BLACK, ChessType.TYP_QUEEN, new Queen());
                 gameBoard[7][row] = dame;
             }
