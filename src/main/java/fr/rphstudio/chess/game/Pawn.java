@@ -30,7 +30,7 @@ public class Pawn implements IMove {
                     rookMoves.add(validpos);
                 }
                 else {
-                    Piece myPawn = board.getPiece(pos);
+                    /*Piece myPawn = board.getPiece(pos);
                     IChess.ChessColor colorofPawn = myPawn.getColor();
                     Piece otherPiece = board.getPiece(validpos);
                     IChess.ChessColor colorOtherPiece = otherPiece.getColor();
@@ -41,7 +41,9 @@ public class Pawn implements IMove {
                             System.out.println("ca marche");
                             rookMoves.add(validpos);
 
-                        }
+
+
+                        }*/
                     /*
 
                     if (colorofRook != colorOtherPiece) {

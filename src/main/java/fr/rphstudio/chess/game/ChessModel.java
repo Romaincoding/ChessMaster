@@ -95,8 +95,14 @@ public class ChessModel implements IChess{
 
     @Override
     public List<ChessType> getRemovedPieces(ChessColor color) {
-        return new ArrayList<>();
+        if(color == ChessColor.CLR_BLACK) {
+            return Board.blackPiece;
+        }
+        else{
+            return Board.whitePiece;
+        }
     }
+
 
     @Override
     public boolean undoLastMove() {
