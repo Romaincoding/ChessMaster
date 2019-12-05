@@ -12,6 +12,10 @@ public class Board {
     public Board() {
         gameBoard = new Piece[8][8];
 
+        /**
+         * Creation and position of the black pieces and attribution of a number for each one of them
+         */
+
         Piece p1 = new Piece(ChessColor.CLR_BLACK, ChessType.TYP_ROOK, new Rook());
         gameBoard[0][0] = p1;
         Piece p2 = new Piece(ChessColor.CLR_BLACK, ChessType.TYP_KNIGHT, new KnightMove());
@@ -20,7 +24,6 @@ public class Board {
         gameBoard[0][2] = p3;
         Piece p4 = new Piece(ChessColor.CLR_BLACK, ChessType.TYP_QUEEN, new Queen());
         gameBoard[0][3] = p4;
-
         Piece p5 = new Piece(ChessColor.CLR_BLACK, ChessType.TYP_KING, new King());
         gameBoard[0][4] = p5;
         Piece p6 = new Piece(ChessColor.CLR_BLACK, ChessType.TYP_BISHOP, new Bishop());
@@ -46,8 +49,9 @@ public class Board {
         Piece p16 = new Piece(ChessColor.CLR_BLACK, ChessType.TYP_PAWN, new Pawn());
         gameBoard[1][7] = p16;
 
-
-
+        /**
+         * Creation and position of the white pieces and attribution of a number for each one of them
+         */
 
         Piece p17 = new Piece(ChessColor.CLR_WHITE, ChessType.TYP_PAWN, new Pawn());
         gameBoard[6][0] = p17;
