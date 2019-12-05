@@ -14,23 +14,43 @@ public class Piece {
     private IMove move;
 
 
+    /**
+     *
+     * @param color
+     * @param type
+     * @param move
+     */
     public Piece(ChessColor color, ChessType type, IMove move) {
-     this.color = color;
-     this.type = type;
-     this.move = move;
+         this.color = color;
+         this.type = type;
+         this.move = move;
 
     }
 
+    /**
+     *
+     * @return
+     */
     public  ChessColor getColor() {
         return color;
     }
 
 
+    /**
+     *
+     * @return
+     */
     public ChessType getType() {
 
         return type;
     }
 
+    /**
+     *
+     * @param pos
+     * @param board
+     * @return
+     */
     public List<ChessPosition> getMoves(ChessPosition pos, Board board){
 
         return move.getPossibleMoves(pos, board);

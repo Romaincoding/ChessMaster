@@ -7,6 +7,12 @@ import java.util.List;
 
 public interface IMove {
 
+    /**
+     *
+     * @param pos
+     * @param board
+     * @return
+     */
     public List<IChess.ChessPosition> getPossibleMoves(IChess.ChessPosition pos,Board board);
 
 }

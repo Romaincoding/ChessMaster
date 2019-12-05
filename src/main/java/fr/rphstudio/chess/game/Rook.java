@@ -9,6 +9,12 @@ import java.util.List;
 
 public class Rook implements IMove {
 
+    /**
+     *
+     * @param pos
+     * @param board
+     * @return
+     */
     public List<ChessPosition> getPossibleMoves(ChessPosition pos, Board board) {
         List<ChessPosition> rookMoves = new ArrayList<>();
 
