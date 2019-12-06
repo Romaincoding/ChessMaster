@@ -9,10 +9,10 @@ import java.util.List;
 public class KnightMove implements IMove {
 
     /**
-     *
-     * @param pos
-     * @param board
-     * @return
+     * All the possible moves of the knight
+     * @param pos the pos of the piece
+     * @param board a board where are the pieces
+     * @return the bishop position
      */
     public List<IChess.ChessPosition> getPossibleMoves(IChess.ChessPosition pos, Board board) {
         List<IChess.ChessPosition> knightMoves = new ArrayList<>();

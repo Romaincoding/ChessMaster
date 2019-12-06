@@ -10,13 +10,13 @@ public class Pawn implements IMove {
 
 
     /**
-     *
-     * @param pos
-     * @param board
-     * @param rookMoves
-     * @param varX
-     * @param varY
-     * @param eatAllowed
+     * All the possible moves of the bihop
+     * @param pos the pos of the piece
+     * @param board the board where are the pieces
+     * @param rookMoves the move of the piece
+     * @param varX the variation of the position on the axis X
+     * @param varY the variation of the position on the axis Y
+     * @param eatAllowed allow to eat
      */
     public static void addPawnMove(IChess.ChessPosition pos, Board board, List<IChess.ChessPosition> rookMoves,int varX, int varY,boolean eatAllowed) {
         IChess.ChessPosition posDest;

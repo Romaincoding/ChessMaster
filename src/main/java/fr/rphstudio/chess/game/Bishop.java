@@ -9,10 +9,10 @@ import java.util.List;
 public class Bishop implements IMove {
 
     /**
-     *
-     * @param pos
-     * @param board
-     * @return
+     * All the possible moves of the bihop
+     * @param pos the pos of the piece
+     * @param board a board where are the pieces
+     * @return the bishop position
      */
     public List<IChess.ChessPosition> getPossibleMoves(IChess.ChessPosition pos, Board board) {
         List<IChess.ChessPosition> bishopMoves = new ArrayList<>();

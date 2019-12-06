@@ -10,10 +10,10 @@ import java.util.List;
 public class Rook implements IMove {
 
     /**
-     *
-     * @param pos
-     * @param board
-     * @return
+     * All the possible moves of the rook
+     * @param pos the pos of the piece
+     * @param board a board where are the pieces
+     * @return the bishop position
      */
     public List<ChessPosition> getPossibleMoves(ChessPosition pos, Board board) {
         List<ChessPosition> rookMoves = new ArrayList<>();

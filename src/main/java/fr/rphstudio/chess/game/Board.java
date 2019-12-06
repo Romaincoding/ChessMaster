@@ -11,12 +11,13 @@ public class Board {
         return gameBoard;
     }
 
+
     private Piece[][] gameBoard;
     public static ArrayList<ChessType> blackPiece = new ArrayList<>();
     public static ArrayList<ChessType> whitePiece = new ArrayList<>();
     public  ArrayList<Move> historyMoves = new ArrayList<>();
     /**
-     *
+     * Filled the game board with the pieces at their starting position
      */
     public Board() {
         gameBoard = new Piece[8][8];
@@ -91,8 +92,8 @@ public class Board {
     }
 
     /**
-     * @param position
-     * @return
+     * @param position The X and Y position in the board
+     * @return a position in the board if is in the dimensions of the board, if not, return  ull
      */
     public Piece getPiece(ChessPosition position) {
         if (position.x >= 0 && position.x <= 7 && position.y >= 0 && position.y <= 7) {
@@ -103,8 +104,8 @@ public class Board {
     }
 
     /**
-     *
-     * @param color
+     *  get the number of the piece in the board with the color
+     * @param color get the color of the piece (black or white)
      * @return
      */
     public int getNbPieces(ChessColor color) {
@@ -125,9 +126,9 @@ public class Board {
     }
 
     /**
-     *
-     * @param src
-     * @param dest
+     * Move the piece with a source pos and a det pos
+     * @param src Source point oh the piece
+     * @param dest dest point of the piece
      */
     public void movePiece(ChessPosition src, ChessPosition dest) {
 
@@ -175,9 +176,9 @@ public class Board {
 
 
     /**
-     *
-     * @param color
-     * @return
+     * if the king is in check, display a message
+     * @param color get the color of the piece (black or white)
+     * @return false if the kong is in check, if not return true
      */
     public boolean isKingSafe(ChessColor color) {
         ChessPosition kingPos = new ChessPosition();

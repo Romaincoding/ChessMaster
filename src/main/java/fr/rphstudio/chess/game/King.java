@@ -10,10 +10,10 @@ public class King implements IMove {
 
 
     /**
-     *
-     * @param pos
-     * @param board
-     * @return
+     * All the possible moves of the king
+     * @param pos the pos of the piece
+     * @param board a board where are the pieces
+     * @return the king position
      */
     public List<IChess.ChessPosition> getPossibleMoves(IChess.ChessPosition pos, Board board) {
         List<IChess.ChessPosition> kingMoves = new ArrayList<>();

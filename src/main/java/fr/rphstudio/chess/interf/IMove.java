@@ -8,7 +8,7 @@ import java.util.List;
 public interface IMove {
 
     /**
-     *
+     * All the possible moves of the piece
      * @param pos
      * @param board
      * @return
