@@ -7,10 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
+    public Piece[][] getGameBoard() {
+        return gameBoard;
+    }
+
     private Piece[][] gameBoard;
     public static ArrayList<ChessType> blackPiece = new ArrayList<>();
     public static ArrayList<ChessType> whitePiece = new ArrayList<>();
-    public static ArrayList<Move> historyMoves = new ArrayList<>();
+    public  ArrayList<Move> historyMoves = new ArrayList<>();
     /**
      *
      */
@@ -132,10 +136,10 @@ public class Board {
         Move move;
 
         if (pieceDest == null) {
-            move = new Move(pieceSrc.getColor(), null, pieceSrc.getType(), null, src, null);
+            move = new Move(pieceSrc, null, src, dest);
         }
         else {
-            move = new Move(pieceSrc.getColor(), pieceDest.getColor(), pieceSrc.getType(), pieceDest.getType(), src, dest);
+            move = new Move(pieceSrc, pieceDest, src, dest);
         }
         historyMoves.add(move);
         // Pieces prises et renvoyées selon leur couleur

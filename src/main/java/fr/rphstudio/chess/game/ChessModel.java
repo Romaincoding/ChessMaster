@@ -106,6 +106,31 @@ public class ChessModel implements IChess{
 
     @Override
     public boolean undoLastMove() {
+        //récupérer dernier élément list et tu le supprimes
+
+       int size = chessBoard.historyMoves.size();
+       Move lastMove = chessBoard.historyMoves.get(size-1);
+        Piece p1 = lastMove.getPieceSrc();
+        chessBoard.getGameBoard()[lastMove.getPosSrc().y][lastMove.getPosSrc().x] = p1;
+
+        Piece p2 = lastMove.getPieceDest();
+        if (lastMove.getPosDest() != null) {
+            chessBoard.getGameBoard()[lastMove.getPosDest().y][lastMove.getPosDest().x] = p2;
+        }
+
+        chessBoard.historyMoves.remove(size-1);
+
+        if(p2!= null){
+          if(p2.getColor()== ChessColor.CLR_BLACK){
+              Board.blackPiece.remove((p2.getType()));
+          }
+          else {
+              Board.whitePiece.remove((p2.getType()));
+          }
+
+          }
+        
+
         return false;
     }
 
