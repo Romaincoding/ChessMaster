@@ -109,30 +109,36 @@ public class ChessModel implements IChess{
         //récupérer dernier élément list et tu le supprimes
 
        int size = chessBoard.historyMoves.size();
-       Move lastMove = chessBoard.historyMoves.get(size-1);
-        Piece p1 = lastMove.getPieceSrc();
-        chessBoard.getGameBoard()[lastMove.getPosSrc().y][lastMove.getPosSrc().x] = p1;
+        if(chessBoard.historyMoves.size()>0) {
+            Move lastMove = chessBoard.historyMoves.get(size - 1);
+            Piece p1 = lastMove.getPieceSrc();
 
-        Piece p2 = lastMove.getPieceDest();
-        if (lastMove.getPosDest() != null) {
-            chessBoard.getGameBoard()[lastMove.getPosDest().y][lastMove.getPosDest().x] = p2;
-        }
+            chessBoard.getGameBoard()[lastMove.getPosSrc().y][lastMove.getPosSrc().x] = p1;
 
-        chessBoard.historyMoves.remove(size-1);
 
-        if(p2!= null){
-          if(p2.getColor()== ChessColor.CLR_BLACK){
-              Board.blackPiece.remove((p2.getType()));
-          }
-          else {
-              Board.whitePiece.remove((p2.getType()));
-          }
+            Piece p2 = lastMove.getPieceDest();
+            if (lastMove.getPosDest() != null) {
+                chessBoard.getGameBoard()[lastMove.getPosDest().y][lastMove.getPosDest().x] = p2;
 
-          }
-        
+            }
 
-        return false;
+
+            chessBoard.historyMoves.remove(size - 1);
+
+            if (p2 != null) {
+                if (p2.getColor() == ChessColor.CLR_BLACK) {
+                    Board.blackPiece.remove((p2.getType()));
+                } else {
+                    Board.whitePiece.remove((p2.getType()));
+                }
+
+            }
+
+
+
+        return true;
     }
+     return false;}
 
     @Override
     public long getPlayerDuration(ChessColor color, boolean isPlaying) {
